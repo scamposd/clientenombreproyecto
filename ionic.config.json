@@ -1,5 +1,7 @@
 {
   "name": "rucappsimpoc",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

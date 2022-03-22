@@ -1,0 +1,152 @@
+<ion-content class="ion-padding">
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <input matInput value="Disco party!" #message>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Action</mat-label>
+    <input matInput value="Dance" #action>
+  </mat-form-field>
+
+
+  <h1>¿Obtener datos sim?</h1>
+  <button mat-flat-button color="primary" (click)="obtenerDatosTelefono()">Obtener</button>
+  
+
+  <div class="ion-padding">
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+
+  <mat-card>
+    <mat-card-content>
+      <h2 class="example-h2">Checkbox configuration</h2>
+
+      <ion-row>
+        <ion-col>
+  
+          <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+            <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+          </section>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section class="example-section">
+            <label class="example-margin">Align:</label>
+            <mat-radio-group [(ngModel)]="labelPosition">
+              <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
+              <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
+            </mat-radio-group>
+          </section>
+        </ion-col>
+    
+        <ion-col>
+          <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+          </section>
+        </ion-col>
+      </ion-row>
+
+  
+      
+  
+ 
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-card class="result">
+    <mat-card-content>
+      <h2 class="example-h2">Result</h2>
+  
+      <section class="example-section">
+        <mat-checkbox
+            class="example-margin"
+            [(ngModel)]="checked"
+            [(indeterminate)]="indeterminate"
+            [labelPosition]="labelPosition"
+            [disabled]="disabled">
+          I'm a checkbox
+        </mat-checkbox>
+      </section>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" min="1">
+      </mat-form-field>
+  
+    </mat-expansion-panel>
+    <mat-expansion-panel disabled>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Destination
+        </mat-panel-title>
+        <mat-panel-description>
+          Type the country name
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </mat-expansion-panel>
+  
+
+  </mat-accordion>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+
+  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
+  
+  
+</ion-content>
